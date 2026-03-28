@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  TimyDemoApp
+//  SampleTimyApp
 //
-//  Created by Einar Grageda on 3/26/26.
+//  Created by Einar Grageda on 3/27/26.
 //
 
 import SwiftUI
@@ -15,7 +15,7 @@ import Timy
 final class TimyDemoViewModel {
 
     // Single shared Timy instance backed by a named SQLite database.
-    let timy = Timy(databaseName: "timy-demo.db")
+    let timy = Timy(databaseName: "sample-timy-demo.db")
 
     /// In-memory log shown in the Event Feed section (most recent first).
     private(set) var recentEvents: [LoggedEvent] = []
@@ -83,10 +83,10 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                databaseSection
                 logEventSection
                 timerSection
                 eventFeedSection
+                databaseSection
             }
             .navigationTitle("Timy Demo")
             .navigationBarTitleDisplayMode(.large)
@@ -160,8 +160,6 @@ struct ContentView: View {
             .disabled(eventName.trimmingCharacters(in: .whitespaces).isEmpty)
         } header: {
             Label("Log Event  ·  timy.log(_:value:)", systemImage: "pencil")
-        } footer: {
-            Text("Writes a row to the events table with the given name and numeric value. Fire-and-forget — returns immediately.")
         }
     }
 
@@ -212,8 +210,6 @@ struct ContentView: View {
             }
         } header: {
             Label("Measure Duration  ·  timy.start / stop", systemImage: "stopwatch")
-        } footer: {
-            Text("timy.start(_:) captures a timestamp; timy.stop(_:) computes elapsed seconds and persists them as the event's value.")
         }
     }
 
@@ -252,7 +248,7 @@ struct ContentView: View {
                 }
             }
         } footer: {
-            Text("All entries here are also persisted to the SQLite database above.")
+            Text("All entries here are also persisted to the SQLite database below.")
         }
     }
 }
@@ -292,4 +288,10 @@ private struct EventRow: View {
         }
         .padding(.vertical, 2)
     }
+}
+
+// MARK: - Preview
+
+#Preview {
+    ContentView()
 }

@@ -1,14 +1,14 @@
 //
-//  TimyDemoApp.swift
-//  TimyDemoApp
+//  SampleTimyAppApp.swift
+//  SampleTimyApp
 //
-//  Created by Einar Grageda on 3/26/26.
+//  Created by Einar Grageda on 3/27/26.
 //
 
 import SwiftUI
 
 @main
-struct TimyDemoApp: App {
+struct SampleTimyAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
