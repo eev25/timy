@@ -4,7 +4,7 @@ A minimalist, thread-safe telemetry client in Swift. Log named events and durati
 
 ## Example
 
-![image](https://github.com/eev25/timy/timy_demo.png)
+![image](https://github.com/eev25/timy/blob/main/timy_demo.png)
 
 ## Installation
 
