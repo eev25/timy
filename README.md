@@ -2,24 +2,9 @@
 
 A minimalist, thread-safe telemetry client in Swift. Log named events and durations to a local SQLite database and easily export for debugging and analysis.
 
-## Example
-
-![image](https://github.com/eev25/timy/blob/main/timy_demo.png)
-
-## Installation
-
-Add Timy to your `Package.swift`:
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/einargrageda/timy", from: "1.0.0")
-],
-targets: [
-    .target(name: "YourTarget", dependencies: ["Timy"])
-]
-```
-
 ## Usage
+
+<img align="right" height="600" src="/timy_demo.png">
 
 ```swift
 import Timy
@@ -49,7 +34,18 @@ if let url = timy.getDatabaseURL() {
 }
 ```
 
-All writes are fire-and-forget — `log()` and `stop()` return immediately without blocking the caller.
+## Installation
+
+Add Timy to your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/einargrageda/timy", from: "1.0.0")
+],
+targets: [
+    .target(name: "YourTarget", dependencies: ["Timy"])
+]
+```
 
 ## Schema
 
